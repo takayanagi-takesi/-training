@@ -1,28 +1,48 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<div id="app">
+  <p>{{items[0].name}}</p>
+</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
+// export default  {
+//   data () {
+//     return {
+//       message: 'こんにちは'
+//     }
+//   }
+// }
+
+var items = [
+  {
+    name: '鉛筆',
+    price: 300,
+    quantity: 0
+  },
+  {
+    name: 'ノート',
+    price: 400,
+    quantity: 0
+  },
+  {
+    name: '消しゴム',
+    price: 500,
+    quantity: 0
   }
-}
+]
+
+var vm = new Vue({
+  el: '#app',
+  data: {
+    items: items
+  }
+})
+
+window.vm = vm
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
